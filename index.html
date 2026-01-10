@@ -3,33 +3,55 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Card Website</title>
+  <title>Anusha — Portfolio</title>
   <link rel="stylesheet" href="style.css">
-</head>
+  <meta name="description" content="Simple portfolio page for Anusha">
+  </head>
 <body>
 
-  <div class="outer">
-    <div class="imge">
-      <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400&h=260&fit=crop"
-           alt="My image" height="260px">
-    </div>
+  <header class="site-header">
+    <h1>Anusha</h1>
+    <p class="tagline">Cloud computing enthusiast — AWS · Terraform · Serverless</p>
+  </header>
 
-    <div class="button-box">
-      <button class="btn">information</button>
-      <button class="btn">contact</button>
-    </div>
+  <main class="container">
 
-    <div class="text">
-      <h3>My little intro</h3>
-      <p>Hi, I'm Anusha! I love coding and building web projects.</p>
-    </div>
+    <section class="hero">
+      <!-- Single placeholder image; replace with your own file later -->
+      <img class="hero-img" src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&h=800&fit=crop" alt="Placeholder">
+      <div class="hero-text">
+        <h2>About Me</h2>
+        <p>Hi — I'm Anusha. I concentrate on cloud computing: infrastructure as code with Terraform, building serverless applications, and deploying workloads on AWS.</p>
+        <a class="cta" href="#contact">Contact me</a>
+      </div>
+    </section>
 
-    <button class="submit">Read more</button>
-  </div>
+    <section class="projects">
+      <h2>Projects</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>Infrastructure as Code</h3>
+          <p>Examples using Terraform to provision cloud resources and manage state.</p>
+        </article>
+        <article class="card">
+          <h3>Serverless Projects</h3>
+          <p>Small serverless apps and APIs deployed on AWS Lambda and API Gateway.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:anusha@example.com">anusha@example.com</a></p>
+    </section>
 
   <p id="visits" style="text-align:center; font-weight:600;">
     Visitors: <span id="visitCount">Loading...</span>
   </p>
+
+  </main>
+
+  <footer class="site-footer">© 2026 Anusha</footer>
 
   <script>
     const API_URL =
