@@ -45,9 +45,10 @@ resource "aws_s3_bucket_public_access_block" "block" {
 resource "aws_s3_object" "index" {
   bucket       = aws_s3_bucket.site.id
   key          = "index.html"
-  source       = "index.html" # Ensure this file exists in your folder!
+  source       = "index.html"
   content_type = "text/html"
 }
+
 
 resource "aws_s3_object" "style" {
   bucket       = aws_s3_bucket.site.id

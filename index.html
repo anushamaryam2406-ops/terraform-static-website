@@ -10,7 +10,8 @@
 
   <div class="outer">
     <div class="imge">
-      <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400&h=260&fit=crop" alt="My image" height="260px">
+      <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400&h=260&fit=crop"
+           alt="My image" height="260px">
     </div>
 
     <div class="button-box">
@@ -20,13 +21,33 @@
 
     <div class="text">
       <h3>My little intro</h3>
-      <p>
-        Hi, I'm Anusha! I love coding and building web projects.
-      </p>
+      <p>Hi, I'm Anusha! I love coding and building web projects.</p>
     </div>
 
     <button class="submit">Read more</button>
   </div>
+
+  <p id="visits" style="text-align:center; font-weight:600;">
+    Visitors: <span id="visitCount">Loading...</span>
+  </p>
+
+  <script>
+    const API_URL =
+      "https://9ocjb0c947.execute-api.eu-north-1.amazonaws.com/prod/visit";
+
+    async function loadVisits() {
+      try {
+        const res = await fetch(API_URL);
+        const data = await res.json();
+        document.getElementById("visitCount").textContent =
+          data.visits ?? 0;
+      } catch (e) {
+        document.getElementById("visitCount").textContent = "Error";
+      }
+    }
+
+    loadVisits();
+  </script>
 
 </body>
 </html>
