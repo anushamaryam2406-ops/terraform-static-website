@@ -27,8 +27,16 @@ resource "aws_lambda_function" "test_lambda" {
 
   filename         = "lambda.zip"
   source_code_hash = filebase64sha256("lambda.zip")
+
+  # ✅ FIXED: Added environment variable
+  environment {
+    variables = {
+      TABLE_NAME = aws_dynamodb_table.visitor_table.name
+    }
+  }
 }
-//This gives Lambda permission to read/write the counter.
+
+# This gives Lambda permission to read/write the counter.
 resource "aws_iam_role_policy" "lambda_dynamodb_policy" {
   role = aws_iam_role.lambda_exec.id
 
