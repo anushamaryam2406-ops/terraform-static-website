@@ -50,6 +50,7 @@ Count displayed on page in real time
 | IaC | Terraform | All infrastructure as code |
 | State | S3 remote backend | Team-safe Terraform state |
 
+![Architecture](architecture.png)
 ---
 
 ## Key Design Decisions
