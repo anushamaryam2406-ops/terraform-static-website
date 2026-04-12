@@ -1,39 +1,15 @@
-# Terraform files
+cat > .gitignore << 'EOF'
+# Terraform
 .terraform/
-terraform.tfstate
-terraform.tfstate.*
-terraform.tfstate.backup
-*.tfvars
-*.tfvars.json
 .terraform.lock.hcl
+*.tfstate
+*.tfstate.backup
+*.tfplan
 
-# Crash log files
-crash.log
-crash.*.log
-
-# Lambda deployment packages
+# Lambda zip (generated during deploy)
 *.zip
-
-# IDE and editor files
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
 
 # OS files
 .DS_Store
 Thumbs.db
-
-# Python
-__pycache__/
-*.py[cod]
-*$py.class
-*.so
-.Python
-venv/
-env/
-ENV/
-
-# Logs
-*.log
+EOF
