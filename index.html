@@ -3,71 +3,95 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Anusha — Portfolio</title>
+  <title>Anusha Maryam — Cloud Engineer</title>
   <link rel="stylesheet" href="style.css">
-  <meta name="description" content="Simple portfolio page for Anusha">
-  </head>
+  <meta name="description" content="Anusha Maryam - Cloud Computing Student | AWS | Terraform | Serverless">
+</head>
 <body>
 
   <header class="site-header">
-    <h1>Anusha</h1>
-    <p class="tagline">Cloud computing enthusiast — AWS · Terraform · Serverless</p>
+    <h1>Anusha Maryam</h1>
+    <p class="tagline">Cloud Computing Student — AWS · Terraform · Serverless · CI/CD</p>
   </header>
 
   <main class="container">
 
     <section class="hero">
-      <!-- Single placeholder image; replace with your own file later -->
-      <img class="hero-img" src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&h=800&fit=crop" alt="Placeholder">
+      <img class="hero-img" src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&h=800&fit=crop" alt="Cloud Computing">
       <div class="hero-text">
         <h2>About Me</h2>
-        <p>Hi — I'm Anusha. I concentrate on cloud computing: infrastructure as code with Terraform, building serverless applications, and deploying workloads on AWS.</p>
+        <p>Hi, I am Anusha Maryam — a Computer Science student at Gomal University specializing in cloud computing on AWS. I build real production-grade projects using Lambda, DynamoDB, Terraform, and GitHub Actions CI/CD pipelines.</p>
         <a class="cta" href="#contact">Contact me</a>
+        <a class="cta" style="margin-left:8px; background:#0077b5;" href="https://linkedin.com/in/anusha-maryam" target="_blank">LinkedIn</a>
+        <a class="cta" style="margin-left:8px; background:#333;" href="https://github.com/anushamaryam2406-ops" target="_blank">GitHub</a>
       </div>
     </section>
 
     <section class="projects">
       <h2>Projects</h2>
       <div class="cards">
+
         <article class="card">
-          <h3>Infrastructure as Code</h3>
-          <p>Examples using Terraform to provision cloud resources and manage state.</p>
+          <h3>Contact API — Serverless Backend</h3>
+          <p>Production-grade REST API built with Lambda, API Gateway and DynamoDB. Features GitHub Actions CI/CD pipeline with dev/prod environments, CloudWatch monitoring, SNS alerts and Terraform modules.</p>
+          <br>
+          <a href="https://github.com/anushamaryam2406-ops/contact-api-terraform" target="_blank" class="cta">View on GitHub</a>
+        </article>
+
+        <article class="card">
+          <h3>Static Portfolio — AWS Hosting</h3>
+          <p>Serverless portfolio website hosted on private S3 bucket delivered via CloudFront CDN globally. Features real-time visitor counter using Lambda and DynamoDB. All infrastructure managed with Terraform.</p>
+          <br>
+          <a href="https://github.com/anushamaryam2406-ops/terraform-static-website" target="_blank" class="cta">View on GitHub</a>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="projects" style="margin-top:28px;">
+      <h2>Skills</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>Cloud & Infrastructure</h3>
+          <p>AWS Lambda, API Gateway, DynamoDB, S3, CloudFront, CloudWatch, SNS, Terraform, Remote State</p>
         </article>
         <article class="card">
-          <h3>Serverless Projects</h3>
-          <p>Small serverless apps and APIs deployed on AWS Lambda and API Gateway.</p>
+          <h3>DevOps & Automation</h3>
+          <p>GitHub Actions, CI/CD Pipelines, Environment Separation (dev/prod), Infrastructure as Code</p>
+        </article>
+        <article class="card">
+          <h3>Development</h3>
+          <p>Python, boto3, REST APIs, JSON, Git, Structured Logging, Error Handling</p>
         </article>
       </div>
     </section>
 
     <section id="contact" class="contact">
       <h2>Contact</h2>
-      <p>Email: <a href="mailto:anusha@example.com">anushamaryam2406@gmail.com</a></p>
+      <p>Email: <a href="mailto:anushamaryam2406@gmail.com">anushamaryam2406@gmail.com</a></p>
+      <p>LinkedIn: <a href="https://linkedin.com/in/anusha-maryam" target="_blank">linkedin.com/in/anusha-maryam</a></p>
+      <p>GitHub: <a href="https://github.com/anushamaryam2406-ops" target="_blank">github.com/anushamaryam2406-ops</a></p>
     </section>
 
-  <p id="visits" class="visitors">
-    Visitors: <span id="visitCount">Loading...</span>
-  </p>
+    <p id="visits" class="visitors">
+      Visitors: <span id="visitCount">Loading...</span>
+    </p>
 
   </main>
 
-  <footer class="site-footer">© 2026 Anusha</footer>
+  <footer class="site-footer">© 2026 Anusha Maryam — Cloud Engineer</footer>
 
   <script>
-    const API_URL =
-      "https://9ocjb0c947.execute-api.eu-north-1.amazonaws.com/prod/visit";
-
+    const API_URL = "https://9ocjb0c947.execute-api.eu-north-1.amazonaws.com/prod/visit";
     async function loadVisits() {
       try {
         const res = await fetch(API_URL);
         const data = await res.json();
-        document.getElementById("visitCount").textContent =
-          data.visits ?? 0;
+        document.getElementById("visitCount").textContent = data.visits ?? 0;
       } catch (e) {
-        document.getElementById("visitCount").textContent = "Error";
+        document.getElementById("visitCount").textContent = "unavailable";
       }
     }
-
     loadVisits();
   </script>
 
